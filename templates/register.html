@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid" style="background-image: url('static/uploads/bg_image_1.jpg'); background-attachment: fixed;" >  
+    <div class="row">
+        <br><br>
+    </div>
+    <div class="row">
+        <div class="col-md-3.5">
+        </div>
+        <div class="container rounded-3 border border-secondary p-4 col-md-5 bg-white shadow-lg">
+            <h2>Register</h2>
+            <br>
+            <form class="form-group" action="{{ url_for('register') }}" method="post">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="text" class="shadow form-control" name="firstname" placeholder="First name" id="firstname" required>
+                            <label for="firstname">First name</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="text" class="shadow form-control" name="lastname" placeholder="Last name" id="lastname" required>
+                            <label for="lastname">Last name</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-floating">
+                    <input type="tel" class="shadow form-control" name="mobile" placeholder="Mobile No." id="mobile" required>
+                    <label for="mobile">Mobile No.</label>
+                </div>
+                <br>
+                <div class="form-floating">
+                    <input type="text" class="shadow form-control has-validation" name="email" placeholder="Email" id="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="invalid-tooltip">
+                    Please enter valid username.
+                </div>
+                <br>
+                <div class="form-floating">
+                    <input type="password" class="shadow form-control" name="password" placeholder="Password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <br>
+                <div class="form-floating">
+                    <select class="shadow form-select" id="role" name="role">
+                        <option value=0>Staff</option>
+                        <option value=1>Student</option>
+                    </select>
+                    <label for="role">Role</label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <br>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already have an account? <a class="ml-2" href="{{ url_for('login') }}">Login now</a>
+                </small>
+            </div>
+            
+        </div>
+        <div class="col-md-4.5">
+        </div>
+    </div>
+    <div class="row">
+        <br><br>
+    </div>
+</div>
+{% endblock %}
