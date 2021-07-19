@@ -1,0 +1,43 @@
+{% extends "staff/staff_layout.html" %}
+{% block staff_content %}
+
+<form class="form-group" action="{{ url_for('input_subjective_questions',q_no=1+q_no,tot_sub_q=tot_sub_q,e_code=exam_code) }}" method="post" enctype="multipart/form-data">
+    <input type="hidden" id="exam_code" name="exam_code" value="{{exam_code}}">
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="card-title">
+                <h5 class="mb-3">Subjective Question {{q_no}} of {{tot_sub_q}}</h5>
+                <textarea class="form-control has-validation" name="question"
+                placeholder="Enter Question" id="question"  required></textarea> 
+            </div>
+            <input type="text" class="form-control has-validation" name="marks"
+                        placeholder="Enter Marks" id="marks" required>
+            <br>
+            <div class="card-title">
+                <label for="subjective_solution">Upload solution pdf</label>
+                <input type="file" class="form-control" name="subjective_solution" id="subjective_solution">
+            </div>
+            {% if q_no == tot_sub_q %}
+                <button type="submit" class="btn btn-primary">CREATE EXAM</button>
+            {% else %}
+                <button type="submit" class="btn btn-primary">Enter Next Question</button>
+            {% endif %}
+        </div>
+    </div>
+    <br>
+    <small><b>Note:</b> Enter the questions, options and solution pdf carefully! They cannot be edited later.</small>
+    <br>
+</form>
+
+<br>
+
+<script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'question' );
+    /*ClassicEditor
+        .create( document.querySelector( '.editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );*/
+</script>
+{% endblock %}

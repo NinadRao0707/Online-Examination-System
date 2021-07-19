@@ -1,0 +1,48 @@
+{% extends "staff/staff_layout.html" %}
+{% block staff_content %}
+
+<form class="form-group" action="{{ url_for('input_questions',q_no=1+q_no,tot_obj_q=tot_obj_q,tot_sub_q=tot_sub_q,e_code=exam_code) }}" method="post">
+    <input type="hidden" id="exam_code" name="exam_code" value="{{exam_code}}">
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="card-title">
+                <h5 class="mb-3">Question {{q_no}} of {{tot_obj_q}}</h5>
+                <textarea class="form-control has-validation" name="question"
+                placeholder="Enter Question" id="question"  required></textarea> 
+            </div>
+            <input type="text" class="form-control has-validation" name="marks"
+                        placeholder="Enter Marks" id="marks" required>
+            <br>
+            <input type="text" class="form-control has-validation mb-2" name="correct_option"
+            placeholder="Enter correct option" id="correct_option" required>
+            <input type="text" class="form-control has-validation  mb-2" name="option_1"
+            placeholder="Enter incorrect option 1" id="option_1" required>
+            <input type="text" class="form-control has-validation mb-2" name="option_2"
+            placeholder="Enter incorrect option 2" id="option_2" required>
+            <input type="text" class="form-control has-validation mb-2" name="option_3"
+            placeholder="Enter incorrect option 3" id="option_3" required>
+            <br>
+            {% if q_no == tot_obj_q and tot_sub_q == 0 %}
+                <button type="submit" class="btn btn-primary">CREATE EXAM</button>
+            {% else %}
+                <button type="submit" class="btn btn-primary">Enter Next Question</button>
+            {% endif %}
+        </div>
+    </div>
+    <br>
+    <small><b>Note:</b> Enter the questions and options carefully! They cannot be edited later.</small>
+    <br>
+</form>
+
+<br>
+
+<script src="//cdn.ckeditor.com/4.5.5/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'question' );
+    /*ClassicEditor
+        .create( document.querySelector( '.editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );*/
+</script>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "staff/staff_layout.html" %}
+{% block staff_content %}
+<h3>Subjects</h3>
+<br>
+<form class="form-group row g-3" action="{{ url_for('create_subject') }}" method="post">
+    {% if msg %}
+    <div class="msg alert alert-danger">{{ msg }}</div>
+    {% endif %}
+    <div class="col-md">
+        <div class="form-floating">
+            <input type="text" class="shadow form-control has-validation" name="subject_name"
+                placeholder="Enter Subject Name" id="subject_name" style="width: 300px;" required>
+            <label for="subject_name">Enter Subject Name</label>
+        </div>
+        <div class="invalid-tooltip">
+            Please enter valid subject.
+        </div>
+    </div>
+    <br>
+    <div class="col-md">
+        <div class="form-floating">
+            <textarea class="shadow form-control has-validation" name="subject_desc"
+                placeholder="Enter Subject Description" id="subject_desc" style="width: 522px; height: 90px"></textarea>
+            <label for="subject_desc">Enter Subject Description</label>
+        </div>
+    </div>
+    <br>
+    <div class="col-md" style="padding-top: 1%;">
+        <button type="submit" class="btn btn-primary">Add Subject</button>
+    </div>
+</form>
+<br>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col" style="width: 31%">Subject Name</th>
+                <th scope="col" style="width: 56%">Description</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in subjects %}
+            <tr>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>
+                    <center>
+                        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"aria-expanded="false">Actions</button>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('subjects_exams',s_id=row[0]) }}" class="dropdown-item">View Exams</a></li>
+                            <li><a href="" class="dropdown-item">Edit Subject</a></li>
+                        </ul>
+                    </center>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

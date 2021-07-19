@@ -1,0 +1,123 @@
+{% extends "staff/staff_layout.html" %}
+{% block staff_content %}
+    <figure class="text-center">
+        <h3 class="display-5">{{ exam_info[1] }}</h3>
+        <strong>Name:</strong> {{student[3]}} {{student[4]}} <br>
+        <strong>Email:</strong> {{student[1]}} <br>
+        <strong>Score for MCQ questions:</strong> {{exams_given[2]}}<br>
+    </figure>
+    <br>
+    {% if exams_given[5] == 0 %}
+    <div class="card">
+        <div class="card-body p-4">
+                <form class="form-group" action="{{ url_for ('store_marks')}}" method="post" >
+                    <div class="input-group mb-3">
+                        <input type="hidden" id="exam_code" name="exam_code" value="{{exam_info[0]}}">
+                        <input type="hidden" id="user_id" name="user_id" value="{{student[0]}}">
+                        <input type="text" class="form-control"  name="marks" placeholder="Enter Final Marks" id="marks" required>
+                        <button onclick="return myFunction()" class="btn btn-outline-danger" type="submit">Save Final Marks</button>
+                      </div>
+                </form>
+        </div>
+    </div>
+    <br>
+    {% endif %}
+    
+    <form class="form-group">
+        {% for question in questions %}
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title bg-light p-3">{{question[1]|safe}}</div>
+                {% if question[2] == 'O' %}
+                <ul class="list-group list-group-flush">
+                    {% for option in options %}
+                        {% if option[3] == question[0] %}
+                            
+                            {% set isCorrect=0 %} 
+                            {% if option[2] == '1' %}
+                                {% set isCorrect=1 %}                                        
+                            {% endif %}
+                            
+                            {% set ns = namespace() %}
+                            {% set ns.isSelected=0 %} 
+                            {% for o in selected_options %}
+                                {% if o[2] == option[0] %}
+                                    {% set ns.isSelected=1 %} 
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if ((isCorrect == 1) and (ns.isSelected == 1)) %}
+                                <div class="list-group-item list-group-item-success">
+                                    <label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" checked name="{{question[0]}}" value="{{option[0]}}">
+                                            <label class="form-check-label">
+                                                {{ option[1] }}
+                                            </label>
+                                        </div>
+                                    </label>
+                                </div>
+                            {% elif ((isCorrect == 1) and (ns.isSelected == 0)) %}
+                                <div class="list-group-item list-group-item-success">
+                                    <label>
+                                        <div class="form-check">
+                                            <input class="form-check-input"  type="radio" name="{{question[0]}}" value="{{option[0]}}">
+                                            <label class="form-check-label">
+                                                {{ option[1] }}
+                                            </label>
+                                        </div>
+                                    </label>
+                                </div>
+                            {% elif ((isCorrect == 0) and (ns.isSelected == 1)) %}
+                                <div class="list-group-item list-group-item-danger">
+                                    <label>
+                                        <div class="form-check">
+                                            <input class="form-check-input"  checked type="radio" name="{{question[0]}}" value="{{option[0]}}">
+                                            <label class="form-check-label">
+                                                {{ option[1] }}
+                                            </label>
+                                        </div>
+                                    </label>
+                                </div>
+                            {% else %}
+                                <div class="list-group-item ">
+                                    <label>
+                                        <div class="form-check">
+                                            <input class="form-check-input"  type="radio" name="{{question[0]}}" value="{{option[0]}}">
+                                            <label class="form-check-label">
+                                                {{ option[1] }} {{colour}}
+                                            </label>
+                                        </div>
+                                    </label>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+                {% elif question[2] == 'S' %}
+                        {% for sub_sol in subjective_solutions %}
+                            {% if question[0] == sub_sol[2] %}
+                                <embed src="/static/student_uploads/{{sub_sol[1]}}" width="100%" height="500px"/>
+                            {% endif %}
+                        {% endfor %}
+                        <h5>Marks allotted: {{question[3]}}</h5>
+                {% endif %}
+            </div>
+
+        </div>
+        <br>
+        {% endfor %}
+        
+        <br>
+    </form>
+
+    <script>
+        function myFunction() {
+            if (confirm("THESE MARKS WILL BE FULL AND FINAL! ARE YOU SURE?")) {
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+{% endblock %}

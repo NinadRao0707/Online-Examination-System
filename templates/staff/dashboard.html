@@ -1,0 +1,65 @@
+{% extends "staff/staff_layout.html" %}
+{% block staff_content %}
+
+
+<h3>My Exams</h3>
+<br>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Code</th>
+        <th scope="col" style="width: 34%">Exam</th>
+        <th scope="col" style="width: 28%">Subject</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Duration</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in exams %}
+      <tr>
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}&nbsp;&nbsp;
+          {% if row[7] >= today %}
+          <span class="badge rounded-pill bg-success">Live</span>
+          {% else %}
+          <span class="badge rounded-pill bg-danger">Ended</span>
+          {% endif %}
+        </td>
+        {% for sub in subjects %}
+        {% if sub[0] == row[9] %}
+        <td>{{sub[1]}}</td>
+        {% else %}
+        {% endif %}
+        {% endfor %}
+        <td>{{row[7]}}</td>
+        <td>{{row[3]}}</td>
+        <td>
+          <center>
+            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">Actions</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ url_for('view_exam',e_code=row[0]) }}">View Form</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('view_responses',e_code=row[0]) }}">View Responses</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('edit_exam',e_code=row[0]) }}">Edit Form</a></li>
+                <li><a class="dropdown-item" onclick="return myFunction()" href="{{ url_for('delete_exam',e_code=row[0]) }}">Delete Exam</a></li>
+            </ul>
+          </center>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function myFunction() {
+      if (confirm("Delete exam?")) {
+      }
+      else {
+          return false;
+      }
+  }
+</script>
+{% endblock %}
