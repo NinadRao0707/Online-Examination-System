@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                {% if request.url[21:] == url_for('student_dashboard')%}
+                    <a class="active list-group-item list-group-item-action list-group-item-success" href="{{ url_for('home') }}">Dashboard</a>
+                {% else %}
+                    <a class="list-group-item list-group-item-action list-group-item-success" href="{{ url_for('home') }}">Dashboard</a>
+                {% endif %}
+
+                {% if request.url[21:] == url_for('student_profile')%}
+                    <a class="active list-group-item list-group-item-action list-group-item-primary" href="{{ url_for('student_profile') }}">Profile</a>
+                {% else %}
+                    <a class="list-group-item list-group-item-action list-group-item-primary" href="{{ url_for('student_profile') }}">Profile</a>
+                {% endif %}
+
+                {% if request.url[21:] == url_for('completed_exams')%}
+                <a class="active list-group-item list-group-item-action list-group-item-success" href="{{ url_for('completed_exams') }}">Exams Given</a>
+                {% else %}
+                <a class="list-group-item list-group-item-action list-group-item-success" href="{{ url_for('completed_exams') }}">Exams Given</a>
+                {% endif %}
+                
+                {% if request.url[21:] == url_for('progress')%}
+                <a class="active list-group-item list-group-item-action list-group-item-primary" href="{{ url_for('progress') }}">Progress</a>
+                {% else %}
+                <a class="list-group-item list-group-item-action list-group-item-primary" href="{{ url_for('progress') }}">Progress</a>
+                {% endif %}
+
+            </ul>
+            <br>
+        </div>
+        <div class="col-md-9">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            {% block student_content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <figure class="text-center">
+        <h2 class="display-5">{{ exam_info[1] }}</h2>
+        <small>{{ exam_info[2] }}</small>
+    </figure>
+    <br>
+    <form class="form-group" action="{{ url_for ('submit_exam')}}" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="exam_code" name="exam_code" value="{{exam_info[0]}}">
+
+        {% for question in questions %}
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title bg-light p-3">{{question[1]|safe}}</div>
+                {% if question[2] == 'O' %}
+                    <ul class="list-group list-group-flush">
+                        {% for option in options %}
+                        {% if option[3] == question[0] %}
+                        <div class="list-group-item borderless">
+                            <label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="{{question[0]}}" required
+                                        value="{{option[0]}}">
+                                    <label class="form-check-label">
+                                        {{ option[1] }}
+                                    </label>
+                                </div>
+                            </label>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </ul> 
+                {% elif question[2] == 'S' %}
+                    <div class="container">
+                        <label for="subjective_solution">Upload solution pdf</label>
+                        <input type="file" class="form-control" name="{{question[0]}}" id="{{question[0]}}">
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+        <br>
+        {% endfor %}
+        <div class="jumbotron">
+            <button type="submit" onclick="return myFunction()" class="btn btn-primary">Submit Exam</button>
+        </div>
+        <br>
+    </form>
+</div>
+
+<style>
+    a{
+        
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+</style>
+<script>
+    function myFunction() {
+        if (confirm("Submit the Exam?")) {
+        }
+        else {
+            return false;
+        }
+    }
+    let siteTitle = '';
+    let count=0;
+    window.addEventListener('blur', () => {
+        siteTitle = document.title;
+        document.title = 'Come back to your exam!';
+        count++;
+        confirm("You have switched tabs/windows "+count+" times! After 5 switches, your exam will be automatically submitted!")
+        if (count>=5){
+            window.close();
+        }
+    });
+    window.addEventListener('focus', () => {
+        document.title = siteTitle;
+    });
+</script>
+{% endblock %}
