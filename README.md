@@ -1,19 +1,65 @@
 # KNSS Aptitude
 ## _Online Examination System_
 
-Today Online Examination System has become a fast growing examination method because of its speed and accuracy. It is also needed less manpower to execute the examination. Almost all organizations now-a-days, are conducting their objective exams by online examination system, it saves students time in examinations. Organizations can also easily check the performance of the student that they give in an examination. As a result of this, organizations are releasing results in less time. It also helps the environment by saving paper.
-
 Our system will be accessible for two types of registered users: students and staff. The staff  members can create timed exams for students. A questionnaire can be filled in prior to the examination which will then in turn be randomized and presented to the students. The MCQs will be checked and the subjective answers will be checked for keywords, based on which marks will be assigned to the student. Students can view their all exams and their performance and grades as a graph on their dashboard, and the staff can view the grades of every student who gave a particular test.
 
 ## _Objectives/Scope_
-
-The main objective of Online Examination System is to efficiently evaluate the candidate thoroughly through a fully automated system that not only saves lot of time but also gives fast results. For students they give papers according to their  convenience and time and there is no need of using extra thing like paper, pen etc. This can be used in educational institutions as well as in corporate world. It can be used anywhere, any time as it is a web based application (user location doesn’t matter). Online examination is designed for educational institutes like Schools ,colleges and private institutes to conduct logic tests of their students or employees on regular basis.
 
 - Online examination reduces the paperwork and workload relating to offline examination process.
 - Online examination gives you the result at the same time so it’s a time saving process.
 - Possibility of paper to get leaked while passing it to different examinations centers, this risk mitigated by the use of an online examination system.
 - Examination process is managed using technology. It is beneficial when you are looking to conduct the exam for multiple candidates at different locations.
 - Online examination gives you the flexibility to design exam papers, evaluate and grade them, there can be same or different questions for students also.
+
+<br>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155984777-be408cf6-9964-4c73-a309-abf18e4942dc.png"></img>
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155986039-4ae9d4b3-106a-4f3d-87ee-dab1ce523f25.png"></img>
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155986068-dd029cdd-e83b-4c60-b173-7159b0272f23.png"></img>
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155986100-435257a5-06d6-49e2-83a2-2e34909c4e9f.png"></img>
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155986123-740b868d-7562-4d50-9c1c-fcdf17dd20fc.png"></img>
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155986153-27662d45-a40f-4457-a82e-0846b4edc430.png"></img>
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155986171-a0cfffb5-e6d8-45db-9267-2e92905e8c84.png"></img>
+  </kbd>
+</p>
+
+<p align="center">
+  <kbd>
+    <img src="https://user-images.githubusercontent.com/67018142/155986264-cb04cd24-26c5-425b-8ed5-08a5675a4b2e.png"></img>
+  </kbd>
+</p>
 
 ## _Technologies Used_
 
