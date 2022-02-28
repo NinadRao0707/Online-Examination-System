@@ -1,93 +1,101 @@
-# KNSS Aptitude
-## _Online Examination System_
+# KNSS-Aptitude
 
-Our system will be accessible for two types of registered users: students and staff. The staff  members can create timed exams for students. A questionnaire can be filled in prior to the examination which will then in turn be randomized and presented to the students. The MCQs will be checked and the subjective answers will be checked for keywords, based on which marks will be assigned to the student. Students can view their all exams and their performance and grades as a graph on their dashboard, and the staff can view the grades of every student who gave a particular test.
-
-## _Objectives/Scope_
-
-- Online examination reduces the paperwork and workload relating to offline examination process.
-- Online examination gives you the result at the same time so it’s a time saving process.
-- Possibility of paper to get leaked while passing it to different examinations centers, this risk mitigated by the use of an online examination system.
-- Examination process is managed using technology. It is beneficial when you are looking to conduct the exam for multiple candidates at different locations.
-- Online examination gives you the flexibility to design exam papers, evaluate and grade them, there can be same or different questions for students also.
-
+Today Online Examination System has become a fast growing examination method because of its speed and accuracy. It is also needed less manpower to execute the examination. Almost all organizations now-a-days, are conducting their objective exams by online examination system, it saves students time in examinations. Organizations can also easily check the performance of the student that they give in an examination. As a result of this, organizations are releasing results in less time. It also helps the environment by saving paper.
 <br>
+Our system will be accessible for two types of registered users: students and staff. The staff  members can create timed exams for students. A questionnaire can be filled in prior to the examination which will then in turn be randomized and presented to the students. The MCQs will be checked and the subjective answers will be checked for keywords, based on which marks will be assigned to the student. Students can view their all exams and their performance and grades as a graph on their dashboard, and the staff can view the grades of every student who gave a particular test. 
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155984777-be408cf6-9964-4c73-a309-abf18e4942dc.png"></img>
-  </kbd>
-</p>
+## Objectives/Scope
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155986039-4ae9d4b3-106a-4f3d-87ee-dab1ce523f25.png"></img>
-  </kbd>
-</p>
+The main objective of Online Examination System is to efficiently evaluate the candidate thoroughly through a fully automated system that not only saves lot of time but also gives fast results. For students they give papers according to their  convenience and time and there is no need of using extra thing like paper, pen etc. This can be used in educational institutions as well as in corporate world. It can be used anywhere, any time as it is a web based application (user location doesn’t matter). Online examination is designed for educational institutes like Schools ,colleges and private institutes to conduct logic tests of their students or employees on regular basis
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155986068-dd029cdd-e83b-4c60-b173-7159b0272f23.png"></img>
-  </kbd>
-</p>
+1. Online examination reduces the paperwork and workload relating to offline examination process.
+2. Online examination gives you the result at the same time so it’s a time saving process.
+3. Possibility of paper to get leaked while passing it to different examinations centers, this risk mitigated by the use of an online examination system.
+4. Examination process is managed using technology. It is beneficial when you are looking to conduct the exam for multiple candidates at different locations.
+5. Online examination gives you the flexibility to design exam papers, evaluate and grade them, there can be same or different questions for students also.
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155986100-435257a5-06d6-49e2-83a2-2e34909c4e9f.png"></img>
-  </kbd>
-</p>
+## Technologies Used
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155986123-740b868d-7562-4d50-9c1c-fcdf17dd20fc.png"></img>
-  </kbd>
-</p>
+#### Frontend:
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155986153-27662d45-a40f-4457-a82e-0846b4edc430.png"></img>
-  </kbd>
-</p>
+* Flask framework
+* HTML
+* Bootstrap
+* CSS
+* Javascript
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155986171-a0cfffb5-e6d8-45db-9267-2e92905e8c84.png"></img>
-  </kbd>
-</p>
+#### Backend:
 
-<p align="center">
-  <kbd>
-    <img src="https://user-images.githubusercontent.com/67018142/155986264-cb04cd24-26c5-425b-8ed5-08a5675a4b2e.png"></img>
-  </kbd>
-</p>
+* MySQL
 
-## _Technologies Used_
+#### Software requirement:
 
-- ### Frontend:
-  - Flask framework - Flask is an API of Python that allows us to build up web-applications.
-  - HTML - The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser.
-  - Bootstrap - Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
-  - CSS - Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.
-  - Javascript - Javascript is a programming language that conforms to the ECMAScript specification. 
+* XAMPP server
+* Visual Studio Code
+* Python 3.9.2
 
-- ### Backend:
-  - [MySQL] - MySQL is an open-source relational database management system.
+## Screenshots:
 
-- ### Software requirement:
-  - [XAMPP server] - XAMPP is a free and open-source cross-platform web server solution stack package.
-  - [Visual Studio Code] - Visual Studio Code is a streamlined code editor with support for development operations like debugging, task running, and version control.
-  - [Python 3.9.2] - Python is an interpreted high-level general-purpose programming language.
+Login Page <br>
+![](/images/image15.png)
 
-## _Developers_
+#### Staff
 
-> #### Ninad Rao
-> #### Sreekesh Iyer
-> #### V Krishnasubramaniam
-> #### Shalaka Waghamale
+Dashboard <br>
+![](/images/image2.png)
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+Profile Page<br>
+![](/images/image18.png)
 
-   [MySQL]: <https://www.mysql.com/>
-   [XAMPP server]: <https://www.apachefriends.org/index.html>
-   [Visual Studio Code]: <https://code.visualstudio.com/>
-   [Python 3.9.2]: <https://www.python.org/>
+Create Exam using Sanfoundry Link Page <br>
+![](/images/image1.png)
+
+Create Exam Manually Page <br>
+![](/images/image9.png)
+
+Add Objective Questions Page <br>
+![](/images/image10.png)
+
+Add Subjective Questions Page <br>
+![](/images/image6.png)
+
+Preview Exam Page <br>
+![](/images/image8.png)
+
+Edit Exam Details Page<br>
+![](/images/image19.png)
+
+Manage Subjects Page <br>
+![](/images/image3.png)
+
+Unchecked Exams Page <br>
+![](/images/image4.png)
+
+Submitted Unchecked Response Page <br>
+![](/images/image5.png)
+
+#### Students
+
+Dashboard<br>
+![](/images/image20.png)
+
+Join Exam Button <br>
+![](/images/image13.png)
+
+Exams Given Page <br>
+![](/images/image11.png)
+
+Submitted Exam Response Page <br>
+![](/images/image14.png)
+
+Progress Page <br>
+![](/images/image17.png)
+
+## Developers:
+
+* Sreekesh Iyer
+* Rao Ninad Shivanand
+* V Krishnasubramaniam
+* Shalaka Waghamale
+
+

@@ -1,40 +1,43 @@
 
 
-This set of Database Multiple Choice Questions & Answers (MCQs) focuses on “Triggers”.
-1. A __________ is a special kind of a store procedure that executes in response to certain action on the table like insertion, deletion or updation of data.
-a) Procedures
-b) Triggers
-c) Functions
-d) None of the mentioned
-View Answer Answer: b
-Explanation: Triggers are automatically generated when a particular operation takes place. 
+This set of Computer Networks Assessment  Questions and Answers focuses on “Socket Programming”.
+1. Which methods are commonly used in Server Socket class?
+a) Public Output Stream get Output Stream ()
+b) Public Socket accept ()
+c) Public synchronized void close ()
+d) Public void connect ()
+View AnswerAnswer: b
+Explanation: The Public socket accept () method is used by the ServerSocket class to accept the connection request of exactly one client at a time. The client requests by initializing the socket object with the servers IP address.
 
 advertisement
 
 
 
 
-2. Triggers are supported in
-a) Delete
-b) Update
-c) Views
-d) All of the mentioned
-View Answer Answer: c
-Explanation: The triggers run after an insert, update or delete on a table. They are not supported for views.  
-3. The CREATE TRIGGER statement is used to create the trigger. THE _____ clause specifies the table name on which the trigger is to be attached. The ______ specifies that this is an AFTER INSERT trigger.
-a) for insert, on
-b) On, for insert
-c) For, insert
-d) None of the mentioned
-View Answer Answer: b
-Explanation: The triggers run after an insert, update or delete on a table. They are not supported for views.  
-4. What are the after triggers?
-a) Triggers generated after a particular operation
-b) These triggers run after an insert, update or delete on a table
-c) These triggers run after an insert, views, update or delete on a table
-d) All of the mentioned
-View Answer Answer: b
-Explanation: AFTER TRIGGERS can be classified further into three types as: AFTER INSERT Trigger, AFTER UPDATE Trigger, AFTER DELETE Trigger.   
+2. Which constructor of Datagram Socket class is used to create a datagram socket and binds it with the given Port Number?
+a) Datagram Socket(int port)
+b) Datagram Socket(int port, Int Address address)
+c) Datagram Socket()
+d) Datagram Socket(int address)
+View AnswerAnswer: b
+Explanation: Datagram Socket (int port, Int Address address) is used to create a datagram socket. A datagram socket is created for connection-less communication between the server and the client. There is no accept() method in this class.
+3. The client in socket programming must know which information?
+a) IP address of Server
+b) Port number
+c) Both IP address of Server & Port number
+d) Only its own IP address
+View AnswerAnswer: c
+Explanation: The client in socket programming must know IP address of Server as it has to use that IP address in order to initialize the socket class constructor. That is how the client requests a connection to the server.
+4. The URL Connection class can be used to read and write data to the specified resource that is referred by the URL.
+a) True
+b) False
+View AnswerAnswer: a
+Explanation: The URL Connection class can be used to read and write data to the specified resource referred by the URL. A connection to the URL is initialized by the OpenConnection() method of the class.
+5. Datagram is basically just a piece of information but there is no guarantee of its content, arrival or arrival time.
+a) True
+b) False
+View AnswerAnswer: a
+Explanation: Datagram is basically some information travelling between the sender and the receiver, but there is no guarantee of its content, arrival or arrival time. A Datagram socket class object is created to make a datagram connection between the server and the client.
 
 advertisement
 
@@ -47,64 +50,47 @@ advertisement
 
 
 
-5. The variables in the triggers are declared using
-a) –
-b) @
-c) /
-d) /@
-View Answer Answer: b
-Explanation: Example : declare @empid int; where empid is the variable.   
-6. The default extension for an Oracle SQL*Plus file is:
-a) .txt
-b) .pls
-c) .ora
-d) .sql
-View Answer Answer: d
-Explanation: Example :None.   
-7. Which of the following is NOT an Oracle-supported trigger?
-a) BEFORE
-b) DURING
-c) AFTER
-d) INSTEAD OF
-View Answer Answer: b
-Explanation: Example: During trigger is not possible in any database.   
+6. TCP, FTP, Telnet, SMTP, POP etc. are examples of ___________
+a) Socket
+b) IP Address
+c) Protocol
+d) MAC Address
+View AnswerAnswer: c
+Explanation: TCP, FTP, Telnet, SMTP, POP etc. are examples of Protocol. Out of them, TCP is a transport layer protocol and FTP, TELNET, SMTP and POP are application layer protocols.
+7. What does the java.net.InetAddress class represent?
+a) Socket
+b) IP Address
+c) Protocol
+d) MAC Address
+View AnswerAnswer: b
+Explanation: The java.net.InetAddress class represents IP Address of a particular specified host. It can be used to resolve the host name from the IP address or the IP address from the host name.
+8. The flush () method of Print Stream class flushes any un-cleared buffers in the memory.
+a) True
+b) False
+View AnswerAnswer: a
+Explanation: The flush () method of Print Stream class flushes any un cleared buffers in memory.
+9. Which classes are used for connection-less socket programming?
+a) Datagram Socket
+b) Datagram Packet
+c) Both Datagram Socket & Datagram Packet
+d) Server Socket
+View AnswerAnswer: c
+Explanation: Datagram is basically some information travelling between the sender and the receiver, but there is no guarantee of its content, arrival or arrival time. Datagram Socket, Datagram Packet are used for connection-less socket programming, while Server Socket is used for connection-oriented socket programming.
 
 advertisement
 
 
 
 
-8. What are the different in triggers?
-a) Define, Create
-b) Drop, Comment
-c) Insert, Update, Delete
-d) All of the mentioned
-View Answer Answer: c
-Explanation: Triggers are not possible for create, drop.   
-9. Triggers ________ enabled or disabled
-a) Can be
-b) Cannot be
-c) Ought to be
-d) Always
-View Answer Answer: a
-Explanation: Triggers can be manipulated.   
-10. Which prefixes are available to Oracle triggers?
-a) : new only
-b) : old only
-c) Both :new and : old
-d) Neither :new nor : old
-View Answer Answer: c
-Explanation: None.   
-
-advertisement
-
-
-
-
-Sanfoundry Global Education & Learning Series – Database Management System.
-
-To practice all areas of Database Management System, here is complete set on 1000+ Multiple Choice Questions and Answers on Database Management System.
-
+10. In Inet Address class, which method returns the host name of the IP Address?
+a) Public String get Hostname()
+b) Public String getHostAddress()
+c) Public static InetAddress get Localhost()
+d) Public getByName()
+View AnswerAnswer: a
+Explanation: In Inet Address class public String getHostname() method returns the host name of the IP Address. The getHostAddress() method returns the IP address of the given host name.
+Sanfoundry Global Education & Learning Series – Computer Networks.
+To practice all areas of Computer Networks Assessment Questions, here is complete set of 1000+ Multiple Choice Questions and Answers.
 
 Participate in the Sanfoundry Certification contest to get free Certificate of Merit. Join our social networks below and stay updated with latest contests, videos, internships and jobs!
 
@@ -113,4 +99,4 @@ Telegram | Youtube | LinkedIn | Instagram | Facebook | Twitter | Pinterest
 
 Youtube | LinkedIn | Instagram | Facebook | Twitter | Pinterest
 
-« Prev - Database Questions and Answers – Functions and Procedures» Next - Database Questions and Answers – Recursive Queries and Aggregation Features 
+« Prev - Computer Networks Questions & Answers – Ports» Next - Computer Networks Questions & Answers – Cookies 
